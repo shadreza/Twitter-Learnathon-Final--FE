@@ -1,27 +1,45 @@
-# TwitterFrontEnd
+## Twitter-Front-End-Part
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.9.
+#### For configuring tailwind CSS
+```bash
+npm install postcss --save-dev
+npm install tailwindcss
+npx tailwind init
+```
 
-## Development server
+#### How i built this things in my computer
+I'm following my convention like : for module, ends with "-m" & for component, ends with "-c"
+```bash
+ng g m userCredential_M
+ng g c user-credential-m/signUp-C --skipTests=true --module user-credential-m
+ng g c user-credential-m/logIn-C --skipTests=true --module user-credential-m
+```
+Created a new folder named `components` to preserve all the general components like `error pages`, `header`, `footer` & their module will be default `app module`.
+```bash
+ng g c components/header-C --skipTests=true --module app
+ng g c components/footer-C --skipTests=true --module app  
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+#### To check code quality
+```bash
+ng lint
+```
 
-## Code scaffolding
+#### Building project
+```bash
+ng build
+ng build --prod
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Running project
+```bash
+ng serve
+```
+### Overall Design planned
+module 01 {signup, login} <br/>
+module 02 {admin dashboard >> show all users, change user details, blocking user} <br/>
+module 03 {searching part} <br/>
+module 04 {network building >> follow, unfollow, block} <br/>
+module 05 {Publishing >> my feed from my followers, posting a new tweet, share retweet, comment section, add like or remove like on post} <br/>
+module 06 (default app module) {header, footer, error pages}
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
