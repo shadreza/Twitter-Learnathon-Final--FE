@@ -8,8 +8,15 @@ module.exports = {
     corePlugins: {
         preflight: false,
     },
-    content: ['./src/**/*.{html,ts}', './projects/**/*.{html,ts}'],
-    plugins: [],
+    content: [
+        './src/**/*.{html,ts}', './projects/**/*.{html,ts}',
+        "./node_modules/flowbite/**/*.js",
+
+    ],
+    plugins: [
+        require('flowbite/plugin'),
+
+    ],
     future: {
         purgeLayersByDefault: true,
         removeDeprecatedGapUtilities: true,

@@ -1,0 +1,4 @@
+curl -Os https://uploader.codecov.io/latest/linux/codecov
+
+chmod +x codecov
+./codecov -t $CODECOV_TOKEN=f38d102a-0a0e-447f-8246-d89d306addf4
