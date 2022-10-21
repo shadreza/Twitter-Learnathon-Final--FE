@@ -2,9 +2,19 @@
 
 #### For configuring tailwind CSS
 ```bash
+yarn install
 npm install postcss --save-dev
 npm install tailwindcss
+npm install -D tailwindcss postcss 
+npm install autoprefixer@10.4.5 --save-exact
 npx tailwind init
+
+npm i -D stylelint-config-standard
+npm audit fix --force 
+npm install tw-elements
+npm install -D @tailwindcss/typography
+ng add @angular/material
+npm start
 ```
 
 #### How i built this things in my computer
@@ -13,6 +23,8 @@ I'm following my convention like : for module, ends with "-m" & for component, e
 ng g m userCredential_M
 ng g c user-credential-m/signUp-C --skipTests=true --module user-credential-m
 ng g c user-credential-m/logIn-C --skipTests=true --module user-credential-m
+
+npm install --save-dev @nrwl/angular
 ```
 Created a new folder named `components` to preserve all the general components like `error pages`, `header`, `footer` & their module will be default `app module`.
 ```bash

@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Twitter-FrontEnd';
+  numbers = [1, 2, 3, 4, 5];
 }
