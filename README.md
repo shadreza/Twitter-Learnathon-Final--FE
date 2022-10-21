@@ -20,6 +20,13 @@ ng g c components/header-C --skipTests=true --module app
 ng g c components/footer-C --skipTests=true --module app  
 ```
 
+#### To check bundle size
+```bash
+npm install -g webpack-bundle-analyzer
+ng build --stats-json
+webpack-bundle-analyzer dist/twitter-front-end/stats.json
+
+```
 #### To check code quality
 ```bash
 ng lint
