@@ -71,10 +71,10 @@ npm start
 ```
 
 ### Overall Design planned
-module 01 [user-credential_M] {signup, login, Forget Password}
-module 02 [admin_M] {admin dashboard >> show all users, change user details, blocking user}
-module 03 [searching_M] {searching part}
-module 04 [networking_M] {network building >> follow, unfollow, block}
-module 05 [tweet_M] {Publishing >> my feed from my followers, posting a new tweet, share retweet, comment section, add like or remove like on post}
-module 06 (default app module) {header, footer, error pages}
+module 01 [user-credential_M] {signup, login, Forget Password} <br/>
+module 02 [admin_M] {admin dashboard >> show all users, change user details, blocking user} <br/>
+module 03 [searching_M] {searching part} <br/>
+module 04 [networking_M] {network building >> follow, unfollow, block} <br/>
+module 05 [tweet_M] {Publishing >> my feed from my followers, posting a new tweet, share retweet, comment section, add like or remove like on post} <br/>
+module 06 (default app module) {header, footer, error pages} <br/>
 
