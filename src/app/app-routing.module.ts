@@ -4,7 +4,8 @@ import { AuthLayoutCComponent } from './modules/auth-m/auth-layout-c/auth-layout
 import { DashboardLayoutCComponent } from './modules/dashboard-m/dashboard-layout-c/dashboard-layout-c.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardLayoutCComponent, pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: DashboardLayoutCComponent, pathMatch: 'full' },
   { path: 'auth', component: AuthLayoutCComponent, pathMatch: 'full' }
 ];
 
