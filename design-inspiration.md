@@ -49,7 +49,17 @@ for the **sm** screen layout
 
 ---
 
-#### <u>Layouts</u>
+#### <u>Layouts & URLs</u>
+
+**Layout 01**
+
+    homePage -> {baseURL}/home
+    settingsPage -> {baseURL}/settings
+
+**Layout 02**
+
+    loginPage -> {baseURL}/auth/login
+    signupPage -> {baseURL}/auth/signup
 
 ---
 
