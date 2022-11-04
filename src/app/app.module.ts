@@ -1,4 +1,3 @@
-import { AuthMModule } from './modules/auth-m/auth-m.module';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
@@ -8,7 +7,6 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 import { MatSliderModule } from '@angular/material/slider';
-import { DashboardMModule } from './modules/dashboard-m/dashboard-m.module';
 
 @NgModule({
     declarations: [
@@ -23,8 +21,6 @@ import { DashboardMModule } from './modules/dashboard-m/dashboard-m.module';
         ReactiveFormsModule,
         CommonModule,
         MatSliderModule,
-        DashboardMModule,
-        AuthMModule
     ],
     providers: [],
     bootstrap: [AppComponent]
