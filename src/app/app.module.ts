@@ -7,10 +7,16 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 import { MatSliderModule } from '@angular/material/slider';
+import { DashboardLComponent } from './layouts/dashboard-l/dashboard-l.component';
+import { AuthLComponent } from './layouts/auth-l/auth-l.component';
+import { ErrorPageLComponent } from './layouts/error-page-l/error-page-l.component';
 
 @NgModule({
     declarations: [
         AppComponent,
+        DashboardLComponent,
+        AuthLComponent,
+        ErrorPageLComponent,
     ],
     imports: [
         AppRoutingModule,
