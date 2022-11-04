@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require("tailwindcss/colors");
 
 module.exports = {
     mode: 'jit',
@@ -32,9 +31,6 @@ module.exports = {
 
         'lg': '1000px',
         // => @media (min-width: 1000px) { ... }
-
-        'xl': '1300px',
-        // => @media (min-width: 1300px) { ... }
       },
       extend: {
           typography: ({ theme }) => ({

@@ -10,6 +10,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { DashboardLComponent } from './layouts/dashboard-l/dashboard-l.component';
 import { AuthLComponent } from './layouts/auth-l/auth-l.component';
 import { ErrorPageLComponent } from './layouts/error-page-l/error-page-l.component';
+import { SidebarCComponent } from './components/sidebar-c/sidebar-c.component';
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import { ErrorPageLComponent } from './layouts/error-page-l/error-page-l.compone
         DashboardLComponent,
         AuthLComponent,
         ErrorPageLComponent,
+        SidebarCComponent,
     ],
     imports: [
         AppRoutingModule,
