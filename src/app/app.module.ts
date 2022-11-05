@@ -12,6 +12,9 @@ import { AuthLComponent } from './layouts/auth-l/auth-l.component';
 import { ErrorPageLComponent } from './layouts/error-page-l/error-page-l.component';
 import { SidebarCComponent } from './components/sidebar-c/sidebar-c.component';
 
+import { NgIconsModule } from '@ng-icons/core';
+import { heroUsers } from '@ng-icons/heroicons/outline';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -29,6 +32,7 @@ import { SidebarCComponent } from './components/sidebar-c/sidebar-c.component';
         ReactiveFormsModule,
         CommonModule,
         MatSliderModule,
+        NgIconsModule.withIcons({ heroUsers }),
     ],
     providers: [],
     bootstrap: [AppComponent]
