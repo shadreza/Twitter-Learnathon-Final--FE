@@ -12,6 +12,8 @@ import { AuthLComponent } from './layouts/auth-l/auth-l.component';
 import { ErrorPageLComponent } from './layouts/error-page-l/error-page-l.component';
 import { SidebarCComponent } from './components/sidebar-c/sidebar-c.component';
 import { NavOptionCComponent } from './components/nav-option-c/nav-option-c.component';
+import { TopnavCComponent } from './components/topnav-c/topnav-c.component';
+import { SearchbarMModule } from './modules/searchbar-m/searchbar-m.module';
 
 @NgModule({
     declarations: [
@@ -21,6 +23,7 @@ import { NavOptionCComponent } from './components/nav-option-c/nav-option-c.comp
         ErrorPageLComponent,
         SidebarCComponent,
         NavOptionCComponent,
+        TopnavCComponent,
     ],
     imports: [
         AppRoutingModule,
@@ -31,6 +34,7 @@ import { NavOptionCComponent } from './components/nav-option-c/nav-option-c.comp
         ReactiveFormsModule,
         CommonModule,
         MatSliderModule,
+        SearchbarMModule
     ],
     providers: [],
     bootstrap: [AppComponent]

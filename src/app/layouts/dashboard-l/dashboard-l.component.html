@@ -6,8 +6,11 @@
   </div>
 
   <!-- other outlets -->
-  <div class="p-4 overflow-y-scroll no-scrollbar bg-white/25 rounded-lg basis-full">
-    <router-outlet></router-outlet>
+  <div class="flex flex-col p-1/2 gap-1 basis-full no-scrollbar">
+    <app-topnav-c class="bg-white/25 no-scrollbar rounded-lg flex basis-12 place-items-center w-full p-2"></app-topnav-c>
+    <div class="bg-white/25 overflow-y-scroll no-scrollbar rounded-lg basis-full">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 
 </div>
