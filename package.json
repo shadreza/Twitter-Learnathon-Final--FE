@@ -25,6 +25,7 @@
     "flowbite": "^1.5.3",
     "framer-motion": "^7.6.4",
     "kutty": "^0.6.0",
+    "material-icons": "^1.12.1",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.6.1",
     "tslib": "^2.3.0",

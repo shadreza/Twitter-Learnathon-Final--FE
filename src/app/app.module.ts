@@ -11,6 +11,7 @@ import { DashboardLComponent } from './layouts/dashboard-l/dashboard-l.component
 import { AuthLComponent } from './layouts/auth-l/auth-l.component';
 import { ErrorPageLComponent } from './layouts/error-page-l/error-page-l.component';
 import { SidebarCComponent } from './components/sidebar-c/sidebar-c.component';
+import { NavOptionCComponent } from './components/nav-option-c/nav-option-c.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { SidebarCComponent } from './components/sidebar-c/sidebar-c.component';
         AuthLComponent,
         ErrorPageLComponent,
         SidebarCComponent,
+        NavOptionCComponent,
     ],
     imports: [
         AppRoutingModule,

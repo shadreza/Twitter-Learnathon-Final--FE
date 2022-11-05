@@ -31,6 +31,9 @@ module.exports = {
 
         'lg': '1000px',
         // => @media (min-width: 1000px) { ... }
+
+        'xl': '1400px',
+        // => @media (min-width: 1400px) { ... }
       },
       extend: {
           typography: ({ theme }) => ({
