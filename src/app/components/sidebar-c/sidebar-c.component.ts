@@ -21,9 +21,14 @@ export class SidebarCComponent implements OnInit {
         optionIconName: "home",
       },
       {
-        optionTitle: "settings",
-        optionUrl: "/settings",
-        optionIconName: "settings",
+        optionTitle: "notification",
+        optionUrl: "/notification",
+        optionIconName: "notifications",
+      },
+      {
+        optionTitle: "messages",
+        optionUrl: "/messages",
+        optionIconName: "message",
       },
       {
         optionTitle: "settings",
