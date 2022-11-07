@@ -22,7 +22,7 @@ export class SidebarCComponent implements OnInit {
       },
       {
         optionTitle: "notification",
-        optionUrl: "/notification",
+        optionUrl: "/notifications",
         optionIconName: "notifications",
       },
       {

@@ -14,6 +14,7 @@ import { SidebarCComponent } from './components/sidebar-c/sidebar-c.component';
 import { NavOptionCComponent } from './components/nav-option-c/nav-option-c.component';
 import { TopnavCComponent } from './components/topnav-c/topnav-c.component';
 import { SearchbarMModule } from './modules/searchbar-m/searchbar-m.module';
+import { TopnavProfileCComponent } from './components/topnav-profile-c/topnav-profile-c.component';
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { SearchbarMModule } from './modules/searchbar-m/searchbar-m.module';
         SidebarCComponent,
         NavOptionCComponent,
         TopnavCComponent,
+        TopnavProfileCComponent,
     ],
     imports: [
         AppRoutingModule,

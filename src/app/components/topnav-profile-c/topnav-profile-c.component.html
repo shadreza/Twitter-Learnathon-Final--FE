@@ -1,0 +1,5 @@
+<div class="flex place-items-center justify-around w-full sm:mr-12 md:mr-16 xm:mr-20">
+  <p class="font-medium uppercase tracking-widest sm:hidden md:hidden xm:hidden lg:block cursor-pointer" routerLink="/profile/{{userName}}">{{userName}}</p>
+  <span *ngIf="!userPicture.length" class="material-icons text-violet-700 cursor-pointer" routerLink="/profile/{{userName}}">person_pin</span>
+  <img *ngIf="userPicture.length" class="rounded-full h-10 cursor-pointer hover:bg-white/25 p-1" src={{userPicture}} alt={{userName}} routerLink="/profile/{{userName}}">
+</div>
