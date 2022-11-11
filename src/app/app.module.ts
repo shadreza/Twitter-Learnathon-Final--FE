@@ -15,6 +15,7 @@ import { NavOptionCComponent } from './components/nav-option-c/nav-option-c.comp
 import { TopnavCComponent } from './components/topnav-c/topnav-c.component';
 import { SearchbarMModule } from './modules/searchbar-m/searchbar-m.module';
 import { TopnavProfileCComponent } from './components/topnav-profile-c/topnav-profile-c.component';
+import { UserCredentialMModule } from './modules/user-credential-m/user-credential-m.module';
 
 @NgModule({
     declarations: [
@@ -36,7 +37,8 @@ import { TopnavProfileCComponent } from './components/topnav-profile-c/topnav-pr
         ReactiveFormsModule,
         CommonModule,
         MatSliderModule,
-        SearchbarMModule
+        SearchbarMModule,
+        UserCredentialMModule
     ],
     providers: [],
     bootstrap: [AppComponent]

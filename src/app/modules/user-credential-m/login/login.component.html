@@ -1,1 +1,13 @@
-<p>login works!</p>
+<div class="bg-white/25 w-[20rem] h-80 p-4 rounded flex flex-col place-items-center">
+  <p class="uppercase text-2xl tracking-[1rem] font-semibold text-center ml-4 text-fuchsia-600/50">Login</p>
+  <form [formGroup]="loginUserForm" class="mt-2 mb-4 w-full text-center" (ngSubmit)="onSubmit()">
+    <div class="w-full text-start">
+      <p class="capitalize tracking-widest text-base text-indigo-500 font-medium mt-4 mb-1">User Mail</p>
+      <input class="w-full text-sm rounded bg-white/50 focus-visible:ring-2 ring-inset ring-blue-400 border-none focus:ring-0 text-violet-700/60" type="text" [formControlName]="'userMail'"/>
+      <p class="capitalize tracking-widest text-base text-indigo-500 font-medium mt-4 mb-1">Password</p>
+      <input class="w-full text-sm rounded bg-white/50 focus-visible:ring-2 ring-inset ring-blue-400 border-none focus:ring-0 text-violet-700/60" type="password" [formControlName]="'password'"/>
+      <p class="text-sm text-end mt-2 animate-pulse text-fuchsia-600 cursor-pointer hover:underline">Forgot Something ?</p>
+    </div>
+    <button type="submit" class="bg-fuchsia-500/40 text-white/70 p-1 mt-4 rounded cursor-pointer w-20">Login</button>
+  </form>
+</div>
