@@ -23,6 +23,7 @@ import { NotificationMModule } from './modules/notification-m/notification-m.mod
 import { ProfileMModule } from './modules/profile-m/profile-m.module';
 import { SettingsMModule } from './modules/settings-m/settings-m.module';
 import { ModalCComponent } from './components/modal-c/modal-c.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { ModalCComponent } from './components/modal-c/modal-c.component';
     SearchbarMModule,
     SettingsMModule,
     UserCredentialMModule,
+    MatCardModule
   ],
   exports: [
       ModalCComponent

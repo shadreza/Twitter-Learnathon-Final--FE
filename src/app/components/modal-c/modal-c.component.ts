@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Modal } from '../interfaces/modal';
 
 @Component({
   selector: 'app-modal-c',
@@ -8,9 +9,15 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class ModalCComponent implements OnInit {
 
+  @Input() props!: Modal;
+  title:string = "";
+  description:string = "";
+
   constructor() { }
 
   ngOnInit(): void {
+    this.title = this.props.modalTitle
+    this.description = this.props.modalDescription
   }
 
 }
