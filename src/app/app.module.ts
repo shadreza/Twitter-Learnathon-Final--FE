@@ -16,32 +16,49 @@ import { TopnavCComponent } from './components/topnav-c/topnav-c.component';
 import { SearchbarMModule } from './modules/searchbar-m/searchbar-m.module';
 import { TopnavProfileCComponent } from './components/topnav-profile-c/topnav-profile-c.component';
 import { UserCredentialMModule } from './modules/user-credential-m/user-credential-m.module';
+import { AdminMModule } from './modules/admin-m/admin-m.module';
+import { FeedsMModule } from './modules/feeds-m/feeds-m.module';
+import { MessagesMModule } from './modules/messages-m/messages-m.module';
+import { NotificationMModule } from './modules/notification-m/notification-m.module';
+import { ProfileMModule } from './modules/profile-m/profile-m.module';
+import { SettingsMModule } from './modules/settings-m/settings-m.module';
+import { ModalCComponent } from './components/modal-c/modal-c.component';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        DashboardLComponent,
-        AuthLComponent,
-        ErrorPageLComponent,
-        SidebarCComponent,
-        NavOptionCComponent,
-        TopnavCComponent,
-        TopnavProfileCComponent,
-    ],
-    imports: [
-        AppRoutingModule,
-        BrowserModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        FormsModule,
-        ReactiveFormsModule,
-        CommonModule,
-        MatSliderModule,
-        SearchbarMModule,
-        UserCredentialMModule
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    DashboardLComponent,
+    AuthLComponent,
+    ErrorPageLComponent,
+    SidebarCComponent,
+    NavOptionCComponent,
+    TopnavCComponent,
+    TopnavProfileCComponent,
+    ModalCComponent,
+  ],
+  imports: [
+    AppRoutingModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
+    MatSliderModule,
+    AdminMModule,
+    FeedsMModule,
+    MessagesMModule,
+    NotificationMModule,
+    ProfileMModule,
+    SearchbarMModule,
+    SettingsMModule,
+    UserCredentialMModule,
+  ],
+  exports: [
+      ModalCComponent
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

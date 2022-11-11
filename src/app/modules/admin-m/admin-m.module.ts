@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminCComponent } from '../admin-c/admin-c.component';
+import { AdminCComponent } from './admin-c/admin-c.component';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { AdminCComponent } from '../admin-c/admin-c.component';
     AdminCComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule,
   ]
 })
 export class AdminMModule { }

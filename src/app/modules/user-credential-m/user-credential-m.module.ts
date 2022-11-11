@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgotSthLoginCComponent } from './forgot-sth-login-c/forgot-sth-login-c.component';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 
 
@@ -11,12 +12,13 @@ import { ForgotSthLoginCComponent } from './forgot-sth-login-c/forgot-sth-login-
   declarations: [
     LoginComponent,
     SignupComponent,
-    ForgotSthLoginCComponent
+    ForgotSthLoginCComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule,
   ]
 })
 export class UserCredentialMModule { }

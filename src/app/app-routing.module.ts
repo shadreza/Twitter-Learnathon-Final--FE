@@ -9,6 +9,7 @@ import { MessagesCComponent } from './modules/messages-m/messages-c/messages-c.c
 import { NotificationCComponent } from './modules/notification-m/notification-c/notification-c.component';
 import { ProfileCComponent } from './modules/profile-m/profile-c/profile-c.component';
 import { SettingsCComponent } from './modules/settings-m/settings-c/settings-c.component';
+import { ForgotSthLoginCComponent } from './modules/user-credential-m/forgot-sth-login-c/forgot-sth-login-c.component';
 import { LoginComponent } from './modules/user-credential-m/login/login.component';
 import { SignupComponent } from './modules/user-credential-m/signup/signup.component';
 
@@ -32,6 +33,7 @@ const routes: Routes = [
       { path: '', pathMatch: 'full', redirectTo: 'login'},
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
+      { path: 'forgot', component: ForgotSthLoginCComponent },
     ]
   },
   { path: '**', component: ErrorPageLComponent },

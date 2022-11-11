@@ -6,8 +6,9 @@
       <input class="w-full text-sm rounded bg-white/50 focus-visible:ring-2 ring-inset ring-blue-400 border-none focus:ring-0 text-violet-700/60" type="text" [formControlName]="'userMail'"/>
       <p class="capitalize tracking-widest text-base text-indigo-500 font-medium mt-4 mb-1">Password</p>
       <input class="w-full text-sm rounded bg-white/50 focus-visible:ring-2 ring-inset ring-blue-400 border-none focus:ring-0 text-violet-700/60" type="password" [formControlName]="'password'"/>
-      <p class="text-sm text-end mt-2 animate-pulse text-fuchsia-600 cursor-pointer hover:underline">Forgot Something ?</p>
+      <p class="text-sm text-end mt-2 animate-pulse text-fuchsia-600 cursor-pointer hover:underline" routerLink="/auth/forgot">Forgot Something ?</p>
     </div>
     <button type="submit" class="bg-fuchsia-500/40 text-white/70 p-1 mt-4 rounded cursor-pointer w-20">Login</button>
   </form>
 </div>
+

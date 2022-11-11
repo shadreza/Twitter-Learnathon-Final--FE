@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NotificationCComponent } from './notification-c/notification-c.component';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { NotificationCComponent } from './notification-c/notification-c.componen
     NotificationCComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ]
 })
 export class NotificationMModule { }

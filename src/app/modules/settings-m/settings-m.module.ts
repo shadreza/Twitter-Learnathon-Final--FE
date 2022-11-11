@@ -1,6 +1,7 @@
+import { AppRoutingModule } from 'src/app/app-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SettingsCComponent } from '../settings-c/settings-c.component';
+import { SettingsCComponent } from './settings-c/settings-c.component';
 
 
 
@@ -9,7 +10,8 @@ import { SettingsCComponent } from '../settings-c/settings-c.component';
     SettingsCComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ]
 })
 export class SettingsMModule { }
