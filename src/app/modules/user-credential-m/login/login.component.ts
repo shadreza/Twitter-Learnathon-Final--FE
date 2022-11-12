@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Modal } from 'src/app/components/interfaces/modal';
+import { ModalSService } from 'src/app/services/modal/modal-s.service';
 
 @Component({
   selector: 'app-login',
@@ -16,16 +17,17 @@ export class LoginComponent implements OnInit {
   });
 
   submitted: boolean = false;
-  userMailStatus: string = ''
-  passwordStatus: string = ''
 
-  errMsgModal: Modal = {
+  LoginMsgModal: Modal = {
     modalTitle: "",
     modalDescription: "",
-    bothAcceptAndCancel: false
+    bothAcceptAndCancel: false,
+    modalInitiator: "login",
+    modalResult: ""
   }
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private modal: ModalSService) { }
+
 
   ngOnInit(): void {
 
@@ -40,10 +42,15 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
 
     if (this.loginUserForm.invalid) {
-      this.userMailStatus = this.loginUserForm.controls['userMail'].status
-      this.passwordStatus = this.loginUserForm.controls['password'].status
+      this.LoginMsgModal.modalTitle = "Failed"
+      this.LoginMsgModal.modalDescription = "Credentials are not correct. Please try again..."
+      this.LoginMsgModal.modalResult = "failure"
+      this.modal.setModal(this.LoginMsgModal, true)
     } else {
-      console.log(JSON.stringify(this.loginUserForm.value, null, 2));
+      this.LoginMsgModal.modalTitle = "Success"
+      this.LoginMsgModal.modalDescription = "You logged in awesomely. Have a great tour..."
+      this.LoginMsgModal.modalResult = "success"
+      this.modal.setModal(this.LoginMsgModal, true)
     }
   }
 

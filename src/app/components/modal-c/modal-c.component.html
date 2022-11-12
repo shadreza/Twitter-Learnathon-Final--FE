@@ -1,10 +1,10 @@
-<div *ngIf="showModal" class="w-[20rem] h-[10rem] bg-white/80 flex flex-col place-items-center gap-1 p-2 rounded">
+<div *ngIf="showModalOrNot" class="w-[20rem] h-[10rem] bg-white/80 flex flex-col place-items-center gap-1 p-2 rounded">
   <div class="basis-3/4 bg-gray-400/30 w-full p-1 rounded">
-    <p class="text-2xl font-bold uppercase tracking-widest text-center mb-2 text-red-500 animate-ping">{{title}}</p>
+    <p class="text-2xl font-bold uppercase tracking-widest text-center mb-2 text-red-500 animate-pulse">{{title}}</p>
     <p class="">{{description}}</p>
   </div>
   <div class="basis-1/4 w-full flex text-center place-items-center justify-center">
-    <span *ngIf="bothBtn" class="material-icons text-green-700 cursor-pointer">check_circle</span>
-    <span class="material-icons text-red-700 cursor-pointer" (click)="cancelModal()">cancel</span>
+    <span class="material-icons text-blue-700 cursor-pointer" (click)="acceptModal()">check_circle</span>
+    <span *ngIf="bothBtn" class="material-icons text-red-700 cursor-pointer" (click)="cancelModal()">cancel</span>
   </div>
 </div>

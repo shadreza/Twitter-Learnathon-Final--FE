@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ModalGlobalConstants } from 'src/app/gloabalConstants/modal-global-constants';
+import { ModalSService } from 'src/app/services/modal/modal-s.service';
+import { Modal } from '../interfaces/modal';
 
 @Component({
   selector: 'app-modal-c',
@@ -9,30 +10,46 @@ import { ModalGlobalConstants } from 'src/app/gloabalConstants/modal-global-cons
 })
 export class ModalCComponent implements OnInit {
 
-  showModal: boolean = ModalGlobalConstants.isModalLive;
+  showModalOrNot: boolean = false;
+
+  modalOption: Modal = {
+    modalTitle : "",
+    modalDescription : "",
+    bothAcceptAndCancel: false,
+    modalInitiator: "",
+    modalResult: ""
+  }
 
   title:string = "";
   description:string = "";
-  bothBtn:boolean = false;
+  initiator:string = "";
+  result:string = "";
+  bothBtn: boolean = false;
 
-  constructor() { }
+  message: string = "";
+
+  constructor(private modal: ModalSService) { }
 
   ngOnInit(): void {
-    this.title = ModalGlobalConstants.modalOptions.modalTitle
-    this.description = ModalGlobalConstants.modalOptions.modalDescription
-    this.bothBtn = ModalGlobalConstants.modalOptions.bothAcceptAndCancel
-    this.showModal = ModalGlobalConstants.isModalLive
+    this.modal.currentMessage.subscribe(message => this.message = message)
+    this.modal.currentModalOption.subscribe(modalOpt => {
+      this.modalOption = modalOpt
+      this.title = this.modalOption.modalTitle
+      this.description = this.modalOption.modalDescription
+      this.bothBtn = this.modalOption.bothAcceptAndCancel
+      this.initiator = this.modalOption.modalInitiator
+      this.result = this.modalOption.modalResult
+    })
+    this.modal.currentVisibilityStateOfModal.subscribe(visibilityState => this.showModalOrNot = visibilityState)
   }
 
   cancelModal(): boolean {
-    ModalGlobalConstants.clearModal()
-    this.showModal = ModalGlobalConstants.isModalLive
+    this.modal.clearModal()
     return false
   }
 
   acceptModal(): boolean {
-    ModalGlobalConstants.clearModal()
-    this.showModal = ModalGlobalConstants.isModalLive
+    this.modal.clearModal()
     return true
   }
 
