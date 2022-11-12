@@ -54,10 +54,6 @@ import { MatCardModule } from '@angular/material/card';
     SearchbarMModule,
     SettingsMModule,
     UserCredentialMModule,
-    MatCardModule
-  ],
-  exports: [
-      ModalCComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
