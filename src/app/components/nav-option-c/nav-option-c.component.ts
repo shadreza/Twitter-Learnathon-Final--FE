@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
-import { NavOption } from '../interfaces/nav-option.ts';
+import { NavOption } from '../../interfaces/nav-option.ts';
 
 @Component({
   selector: 'app-nav-option-c',

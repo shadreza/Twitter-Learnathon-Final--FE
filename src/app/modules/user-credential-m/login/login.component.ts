@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Modal } from 'src/app/components/interfaces/modal';
+import { Modal } from 'src/app/interfaces/modal';
 import { ModalSService } from 'src/app/services/modal/modal-s.service';
 
 @Component({

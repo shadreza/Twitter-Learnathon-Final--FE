@@ -10,6 +10,8 @@ export class FeedsCComponent implements OnInit {
 
   constructor() { }
 
+  feedsList: Array<string> = []
+
   ngOnInit(): void {
   }
 

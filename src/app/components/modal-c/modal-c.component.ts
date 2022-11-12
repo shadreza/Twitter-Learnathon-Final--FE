@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ModalSService } from 'src/app/services/modal/modal-s.service';
-import { Modal } from '../interfaces/modal';
+import { Modal } from '../../interfaces/modal';
 
 @Component({
   selector: 'app-modal-c',

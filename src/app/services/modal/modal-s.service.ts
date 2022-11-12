@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { Modal } from 'src/app/components/interfaces/modal';
+import { Modal } from 'src/app/interfaces/modal';
 
 
 @Injectable({
