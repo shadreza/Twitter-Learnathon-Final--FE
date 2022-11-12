@@ -1,6 +1,5 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { GlobalConstants } from 'src/app/gloabalConstants/global-constants';
-import { Modal } from '../interfaces/modal';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ModalGlobalConstants } from 'src/app/gloabalConstants/modal-global-constants';
 
 @Component({
   selector: 'app-modal-c',
@@ -10,9 +9,8 @@ import { Modal } from '../interfaces/modal';
 })
 export class ModalCComponent implements OnInit {
 
-  showModal: boolean = GlobalConstants.isModalLive;
+  showModal: boolean = ModalGlobalConstants.isModalLive;
 
-  @Input() props!: Modal;
   title:string = "";
   description:string = "";
   bothBtn:boolean = false;
@@ -20,16 +18,22 @@ export class ModalCComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.title = this.props.modalTitle
-    this.description = this.props.modalDescription
-    this.bothBtn = this.props.bothAcceptAndCancel
-    GlobalConstants.setModalVisibility(true)
-    this.showModal = GlobalConstants.isModalLive
+    this.title = ModalGlobalConstants.modalOptions.modalTitle
+    this.description = ModalGlobalConstants.modalOptions.modalDescription
+    this.bothBtn = ModalGlobalConstants.modalOptions.bothAcceptAndCancel
+    this.showModal = ModalGlobalConstants.isModalLive
   }
 
-  closeModal(): void {
-    GlobalConstants.setModalVisibility(false)
-    this.showModal = GlobalConstants.isModalLive
+  cancelModal(): boolean {
+    ModalGlobalConstants.clearModal()
+    this.showModal = ModalGlobalConstants.isModalLive
+    return false
+  }
+
+  acceptModal(): boolean {
+    ModalGlobalConstants.clearModal()
+    this.showModal = ModalGlobalConstants.isModalLive
+    return true
   }
 
 }
