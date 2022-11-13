@@ -19,7 +19,7 @@ export class PostCComponent implements OnInit {
   postContent: string = ""
   postTag: string = ""
   postIsPublished: boolean = false
-  postPublishedTime: Date = new Date
+  postPublishedTime: Date = new Date()
   postLikes: Array<string> = []
   postRetweet: Array<string> = []
 
@@ -33,7 +33,9 @@ export class PostCComponent implements OnInit {
     minute: 0,
   }
 
-  minuteBefore: number = 0
+  monthList = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+  timeString: string =""
 
   ngOnInit(): void {
     this.postId = this.props.postId
@@ -74,6 +76,8 @@ export class PostCComponent implements OnInit {
 
       let diffMinute = Math.floor((timeLeft / factorToModAndDivideNext))
 
+
+
       this.postLiveSinceTime = {
         year: diffYear,
         month: diffMonth,
@@ -82,7 +86,14 @@ export class PostCComponent implements OnInit {
         minute: diffMinute,
       }
 
-      this.minuteBefore = diffMinute
+      if (this.postLiveSinceTime.day >= 1) {
+        this.timeString = `${this.monthList[this.postPublishedTime.getMonth()]} ${this.postPublishedTime.getDate()}`
+        if(this.postPublishedTime.getFullYear() < this.currentTime.getFullYear()) this.timeString += ` - ${this.postPublishedTime.getFullYear()}`
+      } else {
+        if(this.postLiveSinceTime.hour) this.timeString = `${this.postLiveSinceTime.hour}h`
+        else if (this.postLiveSinceTime.minute) this.timeString = `${this.postLiveSinceTime.minute}m`
+        else this.timeString = `just now`
+      }
 
     })
   }
