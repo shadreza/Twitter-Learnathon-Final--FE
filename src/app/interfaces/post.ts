@@ -5,6 +5,6 @@ export interface Post {
   postTag: string
   postIsPublished: boolean
   postPublishedTime: Date
-  postLikes: Array<string>               
+  postLikes: Array<string>
   postRetweet: Array<string>
 }

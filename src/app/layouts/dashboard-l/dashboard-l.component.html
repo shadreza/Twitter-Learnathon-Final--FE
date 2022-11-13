@@ -8,8 +8,11 @@
   <!-- other outlets -->
   <div class="flex flex-col p-1/2 gap-1 basis-full no-scrollbar">
     <app-topnav-c class="bg-white/25 no-scrollbar rounded-lg flex basis-12 place-items-center w-full p-2"></app-topnav-c>
-    <div class="bg-white/25 overflow-y-scroll no-scrollbar rounded-lg basis-full">
-      <router-outlet></router-outlet>
+    <div class="overflow-y-scroll no-scrollbar rounded-lg basis-full flex gap-1">
+      <div class="overflow-y-scroll no-scrollbar rounded-lg bg-white/25 basis-3/4 sm:basis-full md:basis-4/5 p-2">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="overflow-y-scroll no-scrollbar rounded-lg bg-white/25 basis-1/4 sm:hidden md:basis-1/5 p-2">Something Unique</div>
     </div>
   </div>
 
