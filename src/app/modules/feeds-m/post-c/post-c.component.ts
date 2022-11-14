@@ -14,6 +14,7 @@ export class PostCComponent implements OnInit {
   constructor() { }
 
   @Output() postChangedEvent = new EventEmitter<Post>();
+  @Output() deletePostEvent = new EventEmitter<Post>();
   @Input() props!: Post;
   postId: string = ""
   postAuthor: string = ""
@@ -39,13 +40,20 @@ export class PostCComponent implements OnInit {
   timeString: string = ""
 
   likedThisPost: boolean = false
-  currentUserId: string = "s1qsq"
+  currentUserId: string = "Shad Reza"
 
 
-  likeClass:string = "material-icons text-sm cursor-pointer hover:animate-pulse"
+  baseBtnClass:string = "material-icons text-sm cursor-pointer hover:animate-pulse"
   addedLikeClass: string = ""
-  newLikeClass: string = this.likeClass + this.addedLikeClass
+  addedDeleteClass: string = "text-red-500"
+  newLikeClass: string = this.baseBtnClass + " " + this.addedLikeClass
+  newDeleteClass: string = this.baseBtnClass + " " +  this.addedDeleteClass
   currentUserIndex: number = -1
+
+  checkOwnerShipOfPost(): boolean {
+    if(this.postAuthor === this.currentUserId) return true
+    return false
+  }
 
   sendChangedPostToParent(): void {
     this.postChangedEvent.emit({
@@ -73,13 +81,28 @@ export class PostCComponent implements OnInit {
     return false
   }
 
+  deleteBtnFunc(): void {
+    if (this.checkOwnerShipOfPost()) {
+      this.deletePostEvent.emit({
+        postId: this.postId,
+        postAuthor: this.postAuthor,
+        postContent: this.postContent,
+        postTag: this.postTag,
+        postIsPublished: this.postIsPublished,
+        postPublishedTime: this.postPublishedTime,
+        postLikes: this.postLikes,
+        postRetweet: this.postRetweet,
+      })
+    }
+  }
+
   likeBtnFunc(): void {
     if (this.hasUserAlreadyLiked()) {
       this.addedLikeClass = "text-blue-400 hover:animate-none"
     } else {
       this.addedLikeClass = ""
     }
-    this.newLikeClass = this.likeClass + " " + this.addedLikeClass
+    this.newLikeClass = this.baseBtnClass + " " + this.addedLikeClass
   }
 
   userHitsLikeBtn(): void {

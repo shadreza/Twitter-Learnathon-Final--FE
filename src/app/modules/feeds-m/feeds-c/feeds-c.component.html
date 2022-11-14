@@ -1,5 +1,5 @@
 <div class="flex flex-col gap-2 w-full">
-  <app-post-c *ngFor="let feed of feedsList" (postChangedEvent)="recieveEditedPost($event)" [props]="feed"></app-post-c>
+  <app-post-c *ngFor="let feed of feedsList" (postChangedEvent)="recieveEditedPost($event)" (deletePostEvent)="recievedDeletePost($event)" [props]="feed"></app-post-c>
 </div>
 
 
