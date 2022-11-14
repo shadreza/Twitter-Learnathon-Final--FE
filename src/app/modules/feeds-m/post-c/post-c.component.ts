@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 import { timer } from 'rxjs';
 import { Post } from 'src/app/interfaces/post';
 import { PostTime } from 'src/app/interfaces/postTime';
@@ -13,6 +13,7 @@ export class PostCComponent implements OnInit {
 
   constructor() { }
 
+  @Output() postChangedEvent = new EventEmitter<Post>();
   @Input() props!: Post;
   postId: string = ""
   postAuthor: string = ""
@@ -35,7 +36,69 @@ export class PostCComponent implements OnInit {
 
   monthList = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
-  timeString: string =""
+  timeString: string = ""
+
+  likedThisPost: boolean = false
+  currentUserId: string = "s1qsq"
+
+
+  likeClass:string = "material-icons text-sm cursor-pointer hover:animate-pulse"
+  addedLikeClass: string = ""
+  newLikeClass: string = this.likeClass + this.addedLikeClass
+  currentUserIndex: number = -1
+
+  sendChangedPostToParent(): void {
+    this.postChangedEvent.emit({
+      postId: this.postId,
+      postAuthor: this.postAuthor,
+      postContent: this.postContent,
+      postTag: this.postTag,
+      postIsPublished: this.postIsPublished,
+      postPublishedTime: this.postPublishedTime,
+      postLikes: this.postLikes,
+      postRetweet: this.postRetweet,
+    })
+  }
+
+  hasUserAlreadyLiked(): boolean {
+    for (let i = 0; i < this.postLikes.length; i++) {
+      if (this.postLikes[i] === this.currentUserId) {
+        this.likedThisPost = true
+        this.currentUserIndex = i
+        return true
+      }
+    }
+    this.likedThisPost = false
+    this.currentUserIndex = -1
+    return false
+  }
+
+  likeBtnFunc(): void {
+    if (this.hasUserAlreadyLiked()) {
+      this.addedLikeClass = "text-blue-400 hover:animate-none"
+    } else {
+      this.addedLikeClass = ""
+    }
+    this.newLikeClass = this.likeClass + " " + this.addedLikeClass
+  }
+
+  userHitsLikeBtn(): void {
+    if (this.currentUserIndex !== -1) {
+      let newpostLikes: Array<string> = []
+      for (let i = 0; i < this.postLikes.length; i++) {
+        if (i === this.currentUserIndex) {
+          continue
+        } else {
+          newpostLikes.push(this.postLikes[i])
+        }
+      }
+      this.postLikes = newpostLikes
+    } else {
+      this.postLikes.push(this.currentUserId)
+    }
+    this.likeBtnFunc()
+    this.sendChangedPostToParent()
+  }
 
   ngOnInit(): void {
     this.postId = this.props.postId
@@ -46,6 +109,8 @@ export class PostCComponent implements OnInit {
     this.postPublishedTime = this.props.postPublishedTime
     this.postLikes = this.props.postLikes
     this.postRetweet = this.props.postRetweet
+
+    this.likeBtnFunc()
 
     this.currentTime = new Date()
     timer(0, 1000).subscribe(() => {

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, } from '@angular/core';
 import { Post } from 'src/app/interfaces/post';
 
 @Component({
@@ -13,7 +13,7 @@ export class FeedsCComponent implements OnInit {
 
   feedsList: Array<Post> = [
     {
-      postId: "asd1e1d1",
+      postId: "asd1e1d11",
       postAuthor: "Shad Reza",
       postContent: "How its done",
       postTag: "#work",
@@ -23,7 +23,7 @@ export class FeedsCComponent implements OnInit {
       postRetweet: ["s1qsddq123", "asdasdasf1331d", "gb1231434f"],
     },
     {
-      postId: "asd1e1d1",
+      postId: "asd1e1d12",
       postAuthor: "Masum",
       postContent: "How its done",
       postTag: "#work-force",
@@ -33,7 +33,7 @@ export class FeedsCComponent implements OnInit {
       postRetweet: ["s1qsaq123", "asdasdasf1331d", "gb1231434f"],
     },
     {
-      postId: "asd1e1d1",
+      postId: "asd1e1d13",
       postAuthor: "Mohim",
       postContent: "How its done",
       postTag: "#work",
@@ -43,7 +43,7 @@ export class FeedsCComponent implements OnInit {
       postRetweet: ["s1qsq123", "asdafsdasf1331d", "gb1231434f"],
     },
     {
-      postId: "asd1e1d1",
+      postId: "asd1e1d14",
       postAuthor: "Wasif",
       postContent: "How its done",
       postTag: "#cp",
@@ -53,7 +53,7 @@ export class FeedsCComponent implements OnInit {
       postRetweet: ["s1qs1q123", "asdasdasf1331d", "gb1231434f"],
     },
     {
-      postId: "asd1e1d1",
+      postId: "asd1e1d15",
       postAuthor: "Rakib",
       postContent: "How its done",
       postTag: "#tech",
@@ -63,6 +63,27 @@ export class FeedsCComponent implements OnInit {
       postRetweet: ["s1qsq123", "asdasdasf1331d", "gb1231434f"],
     },
   ]
+
+  editedPost: Post = {
+    postId: "",
+    postAuthor: "",
+    postContent: "",
+    postTag: "",
+    postIsPublished: true,
+    postPublishedTime: new Date(),
+    postLikes: [],
+    postRetweet: [],
+  }
+
+  recieveEditedPost($event: any): void {
+    this.editedPost = $event
+    for (let i = 0; i < this.feedsList.length; i++) {
+      if (this.feedsList[i].postId === this.editedPost.postId) {
+        this.feedsList[i] = this.editedPost
+        break
+      }
+    }
+  }
 
   ngOnInit(): void {
   }
