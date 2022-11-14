@@ -18,12 +18,9 @@ import { TopnavProfileCComponent } from './components/topnav-profile-c/topnav-pr
 import { UserCredentialMModule } from './modules/user-credential-m/user-credential-m.module';
 import { AdminMModule } from './modules/admin-m/admin-m.module';
 import { FeedsMModule } from './modules/feeds-m/feeds-m.module';
-import { MessagesMModule } from './modules/messages-m/messages-m.module';
 import { NotificationMModule } from './modules/notification-m/notification-m.module';
 import { ProfileMModule } from './modules/profile-m/profile-m.module';
-import { SettingsMModule } from './modules/settings-m/settings-m.module';
 import { ModalCComponent } from './components/modal-c/modal-c.component';
-import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -48,11 +45,9 @@ import { MatCardModule } from '@angular/material/card';
     MatSliderModule,
     AdminMModule,
     FeedsMModule,
-    MessagesMModule,
     NotificationMModule,
     ProfileMModule,
     SearchbarMModule,
-    SettingsMModule,
     UserCredentialMModule,
   ],
   providers: [],
