@@ -1,7 +1,11 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Modal } from 'src/app/interfaces/modal';
 import { ModalSService } from 'src/app/services/modal/modal-s.service';
+import { UserSService } from 'src/app/services/user/user-s.service';
+import {Credentials} from '../../../creds'
 
 @Component({
   selector: 'app-login',
@@ -26,7 +30,10 @@ export class LoginComponent implements OnInit {
     modalResult: ""
   }
 
-  constructor(private formBuilder: FormBuilder, private modal: ModalSService) { }
+  invalidLogin: boolean = true;
+  userCurrent: string = '';
+
+  constructor(private formBuilder: FormBuilder, private modal: ModalSService, private http: HttpClient, private router : Router, private user: UserSService) { }
 
 
   ngOnInit(): void {
@@ -35,6 +42,8 @@ export class LoginComponent implements OnInit {
       userMail: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
+
+    this.user.currentUser.subscribe(user => this.userCurrent = user)
 
   }
 
@@ -46,7 +55,21 @@ export class LoginComponent implements OnInit {
       this.LoginMsgModal.modalDescription = "Credentials are not correct. Please try again..."
       this.LoginMsgModal.modalResult = "failure"
       this.modal.setModal(this.LoginMsgModal, true)
+      this.user.userClear()
     } else {
+
+      this.http.post(Credentials.BASE_API_ENDPOINT, this.loginUserForm)
+        .subscribe(res => {
+          const token = (<any>res).token
+          localStorage.setItem('jwt', token)
+          this.user.userLoggedIn(token)
+          this.invalidLogin = false
+          this.router.navigate(['/'])
+        }, err => {
+          this.user.userClear()
+          this.invalidLogin = true
+        })
+
       this.LoginMsgModal.modalTitle = "Success"
       this.LoginMsgModal.modalDescription = "You logged in awesomely. Have a great tour..."
       this.LoginMsgModal.modalResult = "success"

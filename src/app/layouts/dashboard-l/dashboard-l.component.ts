@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserSService } from 'src/app/services/user/user-s.service';
 
 @Component({
   selector: 'app-dashboard-l',
@@ -8,9 +10,19 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class DashboardLComponent implements OnInit {
 
-  constructor() { }
+  constructor(private currentUser: UserSService, private router: Router) { }
+
+  user: string = ""
 
   ngOnInit(): void {
+    console.log('object');
+
+    this.currentUser.currentUser.subscribe(user => this.user = user)
+
+    if (!this.user) {
+      this.router.navigate(["/auth/login"])
+    }
+
   }
 
 }
