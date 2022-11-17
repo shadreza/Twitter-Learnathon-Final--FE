@@ -15,7 +15,6 @@ export class DashboardLComponent implements OnInit {
   user: string = ""
 
   ngOnInit(): void {
-    console.log('object');
 
     this.currentUser.currentUser.subscribe(user => this.user = user)
 

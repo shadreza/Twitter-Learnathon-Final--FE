@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -17,6 +18,7 @@ export class UserSService {
 
   userLoggedIn(userId: string): void {
     this.userSource.next(userId)
+    this.router.navigate(["/"])
   }
 
   userStatus(): void {
@@ -27,5 +29,5 @@ export class UserSService {
     this.userSource.next("")
   }
 
-  constructor() { }
+  constructor( private router: Router) { }
 }
