@@ -12,6 +12,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { ErrorPageLComponent } from './layouts/error-page-l/error-page-l.component';
 import { DashboardLComponent } from './layouts/dashboard-l/dashboard-l.component';
 import { NavbarCComponent } from './layouts/dashboard-l/components/navbar-c/navbar-c.component';
+import { SearchbarCComponent } from './layouts/dashboard-l/components/searchbar-c/searchbar-c.component';
+import { SidebarCComponent } from './layouts/dashboard-l/components/sidebar-c/sidebar-c.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +21,8 @@ import { NavbarCComponent } from './layouts/dashboard-l/components/navbar-c/navb
         ErrorPageLComponent,
         DashboardLComponent,
         NavbarCComponent,
+        SearchbarCComponent,
+        SidebarCComponent,
     ],
     imports: [
         AppRoutingModule,
