@@ -9,10 +9,16 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 
 import { MatSliderModule } from '@angular/material/slider';
+import { ErrorPageLComponent } from './layouts/error-page-l/error-page-l.component';
+import { DashboardLComponent } from './layouts/dashboard-l/dashboard-l.component';
+import { NavbarCComponent } from './layouts/dashboard-l/components/navbar-c/navbar-c.component';
 
 @NgModule({
     declarations: [
         AppComponent,
+        ErrorPageLComponent,
+        DashboardLComponent,
+        NavbarCComponent,
     ],
     imports: [
         AppRoutingModule,

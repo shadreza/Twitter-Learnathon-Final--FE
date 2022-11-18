@@ -1,18 +1,19 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import { DashboardLComponent } from './layouts/dashboard-l/dashboard-l.component';
 import { ErrorPageLComponent } from './layouts/error-page-l/error-page-l.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: DashboardLComponent,
-  //   children: [
-  //     { path: '', component: FeedsCComponent},
-  //     { path: 'admin', component: AdminCComponent },
-  //     { path: 'notifications', component: NotificationCComponent },
-  //     { path: 'profile/:userName', component: ProfileCComponent },
-  //   ]
-  // },
+  {
+    path: '',
+    component: DashboardLComponent,
+    children: [
+      // { path: '', component: FeedsCComponent},
+      // { path: 'admin', component: AdminCComponent },
+      // { path: 'notifications', component: NotificationCComponent },
+      // { path: 'profile/:userName', component: ProfileCComponent },
+    ]
+  },
   // {
   //   path: 'auth',
   //   component: AuthLComponent,
