@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-searchbar-c',
@@ -8,18 +8,8 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class SearchbarCComponent implements OnInit {
 
-  @Input() props!: string;
-
-  styleClass: string = ''
-
   constructor() { }
 
-  ngOnInit(): void {
-    if (this.props === 'mdCrossed') {
-      this.styleClass = 'w-64 hidden md:block'
-    } else if (this.props === 'mdNotCrossed') {
-      this.styleClass = 'w-62 block md:hidden ml-2 mb-2'
-    }
-  }
+  ngOnInit(): void { }
 
 }

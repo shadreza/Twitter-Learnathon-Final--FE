@@ -14,6 +14,7 @@ import { DashboardLComponent } from './layouts/dashboard-l/dashboard-l.component
 import { NavbarCComponent } from './layouts/dashboard-l/components/navbar-c/navbar-c.component';
 import { SearchbarCComponent } from './layouts/dashboard-l/components/searchbar-c/searchbar-c.component';
 import { SidebarCComponent } from './layouts/dashboard-l/components/sidebar-c/sidebar-c.component';
+import { NavOptionCComponent } from './layouts/dashboard-l/components/nav-option-c/nav-option-c.component';
 
 @NgModule({
     declarations: [
@@ -23,6 +24,7 @@ import { SidebarCComponent } from './layouts/dashboard-l/components/sidebar-c/si
         NavbarCComponent,
         SearchbarCComponent,
         SidebarCComponent,
+        NavOptionCComponent,
     ],
     imports: [
         AppRoutingModule,
