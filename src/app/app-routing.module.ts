@@ -1,10 +1,29 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import { ErrorPageLComponent } from './layouts/error-page-l/error-page-l.component';
 
 const routes: Routes = [
-    // {path: '', pathMatch: 'full', redirectTo: 'login'}, // Route Guard
-    // {path: '**', component: NotFoundComponent}, //Wild Card Route for 404 request, must be in bottom
-    // loadChildren:() => import('./login/login.module').then(_ => _.LoginModule)  // for lazy-loading of that module
+  // {
+  //   path: '',
+  //   component: DashboardLComponent,
+  //   children: [
+  //     { path: '', component: FeedsCComponent},
+  //     { path: 'admin', component: AdminCComponent },
+  //     { path: 'notifications', component: NotificationCComponent },
+  //     { path: 'profile/:userName', component: ProfileCComponent },
+  //   ]
+  // },
+  // {
+  //   path: 'auth',
+  //   component: AuthLComponent,
+  //   children: [
+  //     { path: '', pathMatch: 'full', redirectTo: 'login'},
+  //     { path: 'login', component: LoginComponent },
+  //     { path: 'signup', component: SignupComponent },
+  //     { path: 'forgot', component: ForgotSthLoginCComponent },
+  //   ]
+  // },
+  { path: '**', component: ErrorPageLComponent },
 ];
 
 @NgModule({
