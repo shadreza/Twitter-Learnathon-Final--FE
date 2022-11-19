@@ -11,12 +11,16 @@ module.exports = {
         "./node_modules/flowbite/**/*.js",
         './node_modules/tw-elements/dist/js/**/*.js',
     ],
-    plugins: [
+  plugins: [
+        require('tailwind-scrollbar'),
         require('flowbite/plugin'),
         require("kutty"),
         require('tw-elements/dist/plugin'),
         require('@tailwindcss/typography'),
     ],
+    variants: {
+        scrollbar: ['rounded']
+    },
     future: {
         purgeLayersByDefault: true,
         removeDeprecatedGapUtilities: true,

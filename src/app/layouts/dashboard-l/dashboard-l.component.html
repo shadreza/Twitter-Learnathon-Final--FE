@@ -1,5 +1,9 @@
-<app-navbar-c></app-navbar-c>
-<div class="flex md:gap-2">
-  <app-sidebar-c></app-sidebar-c>
-  <router-outlet class="p-2"></router-outlet>
+<app-navbar-c class="z-40"></app-navbar-c>
+<div class="flex w-full bg-red-100">
+  <div class="z-30">
+    <app-sidebar-c></app-sidebar-c>
+  </div>
+  <div class="h-60 w-full overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-indigo-600">
+    <router-outlet></router-outlet>
+  </div>
 </div>

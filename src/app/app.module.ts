@@ -20,6 +20,7 @@ import { AuthMModule } from './modules/auth-m/auth-m.module';
 import { FriendsMModule } from './modules/friends-m/friends-m.module';
 import { SettingsMModule } from './modules/settings-m/settings-m.module';
 import { UserAuthMModule } from './modules/user-auth-m/user-auth-m.module';
+import { NotificationsMModule } from './modules/notifications-m/notifications-m.module';
 
 @NgModule({
     declarations: [
@@ -43,6 +44,7 @@ import { UserAuthMModule } from './modules/user-auth-m/user-auth-m.module';
         FeedsMModule,
         AuthMModule,
         FriendsMModule,
+        NotificationsMModule,
         SettingsMModule,
         UserAuthMModule,
     ],

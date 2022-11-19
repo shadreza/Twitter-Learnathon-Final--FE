@@ -8,9 +8,17 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class FeedsCComponent implements OnInit {
 
+  feedsLoaded: boolean = false
+  feeds: Array<string> = []
+
   constructor() { }
 
   ngOnInit(): void {
+    if (this.feedsLoaded) {
+
+    } else {
+      this.feeds = ["", "", ""]
+    }
   }
 
 }

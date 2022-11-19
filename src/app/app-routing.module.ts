@@ -4,6 +4,7 @@ import { DashboardLComponent } from './layouts/dashboard-l/dashboard-l.component
 import { ErrorPageLComponent } from './layouts/error-page-l/error-page-l.component';
 import { FeedsCComponent } from './modules/feeds-m/components/feeds-c/feeds-c.component';
 import { FriendsCComponent } from './modules/friends-m/components/friends-c/friends-c.component';
+import { NotificationsCComponent } from './modules/notifications-m/components/notifications-c/notifications-c.component';
 import { SettingsCComponent } from './modules/settings-m/components/settings-c/settings-c.component';
 
 const routes: Routes = [
@@ -12,8 +13,8 @@ const routes: Routes = [
     component: DashboardLComponent,
     children: [
       { path: '', component: FeedsCComponent},
-      // { path: 'notifications', component: NotificationsCComponent },
       { path: 'friends', component: FriendsCComponent },
+      { path: 'notifications', component: NotificationsCComponent },
       { path: 'settings', component: SettingsCComponent },
     ]
   },
